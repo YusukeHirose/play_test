@@ -1,0 +1,3 @@
+[submodule "module/play-test-sub"]
+	path = module/play-test-sub
+	url = git@grpc:YusukeHirose/play-test-sub.git

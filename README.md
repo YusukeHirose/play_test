@@ -15,3 +15,9 @@
 * localhost:9000 で welcome to play が表示されれば完了
 * ctr-d でstop
 
+## Submodule追加
+* 別リポジトリに同様の手順でprojectを作成
+* submoduleを管理するディレクトリを作成(今回はmoduleディレクトリ)
+* moduleディレクトリに移動後 `git submodule add 追加するリポジトリのURL` 
+* module以下にクローンされて、.gitmodulesファイルが作成されていることを確認
+
