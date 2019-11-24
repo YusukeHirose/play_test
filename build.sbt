@@ -17,5 +17,3 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava)
   .dependsOn(play_test_sub % "compile->compile")
 
 lazy val play_test_sub = (project in file("./module/play-test-sub")).enablePlugins(PlayJava)
-
-PlayKeys.devSettings += ("play.http.router", "sub.Routes")
