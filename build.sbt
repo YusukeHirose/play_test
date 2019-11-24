@@ -9,7 +9,7 @@ libraryDependencies += guice
 
 
 lazy val root = (project in file(".")).enablePlugins(PlayJava)
-  .aggregate(playTestSub)
-  .dependsOn(playTestSub)
+  .aggregate(play_test_sub)
+  .dependsOn(play_test_sub)
 
-lazy val playTestSub = (project in file("./module/play-test-sub")).enablePlugins(PlayJava)
+lazy val play_test_sub = (project in file("./module/play-test-sub")).enablePlugins(PlayJava)
