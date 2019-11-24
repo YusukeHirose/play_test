@@ -3,8 +3,13 @@ organization := "play-test"
 
 version := "1.0-SNAPSHOT"
 
-lazy val root = (project in file(".")).enablePlugins(PlayJava)
-
 scalaVersion := "2.13.1"
 
 libraryDependencies += guice
+
+
+lazy val root = (project in file(".")).enablePlugins(PlayJava)
+  .aggregate(playTestSub)
+  .dependsOn(playTestSub)
+
+lazy val playTestSub = (project in file("./module/play-test-sub")).enablePlugins(PlayJava)
