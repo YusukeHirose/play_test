@@ -21,8 +21,12 @@ jobs:
           sudo apt-get install
           
       - name: Clone submodule
+        env:
+          GITHUB_TOKEN: ${{ secrets.PLAY_TEST_SUB }}
+          GITHUB_USER: ${{ secrets.GITHUB_USER }}
         run: |
-          git submodule add https://github.com/YusukeHirose/play-test-sub.git
+          git submodule add https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/YusukeHirose/play-test-sub.git
+        working-directory: ./module
 
       - name: Compile
         run: sbt compile
