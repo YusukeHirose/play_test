@@ -13,9 +13,9 @@ libraryDependencies += guice
 
 
 lazy val root = (project in file(".")).enablePlugins(PlayJava)
-  .aggregate(play_test_sub)
-  .dependsOn(play_test_sub % "compile->compile")
+  .aggregate(sub)
+  .dependsOn(sub % "compile->compile")
 
-lazy val play_test_sub = (project in file("./module/play-test-sub")).enablePlugins(PlayJava)
+lazy val sub = (project in file("./module/play-test-sub")).enablePlugins(PlayJava)
 
-PlayKeys.devSettings += ("play.http.router", "sub.Routes")
+//PlayKeys.devSettings += ("play.http.router", "sub.Routes")
