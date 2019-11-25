@@ -1,3 +1,4 @@
+ThisBuild / organization := "play-test"
 ThisBuild / version := "0.1.0-SNAPSHOT"
 ThisBuild / scalaVersion := "2.13.1"
 
@@ -16,6 +17,8 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava)
   .aggregate(sub)
   .dependsOn(sub % "compile->compile")
 
-lazy val sub = (project in file("./module/play-test-sub")).enablePlugins(PlayJava)
+lazy val sub = (project in file("module/play-test-sub")).enablePlugins(PlayJava)
 
-PlayKeys.devSettings += ("play.http.router", "sub.Routes")
+// ↓ 下記を追加すると最初からsubのrouteを見に行く
+//PlayKeys.devSettings += ("play.http.router", "sub.Routes")
+
