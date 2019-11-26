@@ -19,6 +19,9 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install sbt
+        
+      - name: Clean sbt
+        run: sbt clean
           
       - name: Dist
         run: sbt dist
