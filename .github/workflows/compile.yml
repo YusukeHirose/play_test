@@ -19,6 +19,9 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install
+          
+      - name: Dist
+        run: sbt dist
 
       - name: Compile
         run: sbt compile
