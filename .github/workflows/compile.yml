@@ -10,6 +10,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v1
         with:
+          token: ${{ secrets.GITHUB_TEST_SUB }}
           submodules: true
 
       - name: Set up JDK 11
