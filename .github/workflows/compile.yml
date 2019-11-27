@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v1
+        with:
+          submodules: true
 
       - name: Set up JDK 11
         uses: actions/setup-java@v1
@@ -19,12 +21,6 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install sbt
-        
-      - name: Clean sbt
-        run: sbt clean
-          
-      - name: Dist
-        run: sbt dist
 
       - name: Compile
         run: sbt compile
