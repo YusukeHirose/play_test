@@ -4,7 +4,6 @@ services:
     container_name: play-test
     image: amazoncorretto:11.0.4
     #    build: .
-    tty: true
     expose:
       - "9000"
     ports:
@@ -12,5 +11,6 @@ services:
     volumes:
       - "./:/var/app/play-test"
     working_dir: "/var/app/play-test"
+    tty: true
     command: "./sbt compile"
 
