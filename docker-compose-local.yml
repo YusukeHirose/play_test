@@ -12,5 +12,5 @@ services:
     volumes:
       - "./:/var/app/play-test"
     working_dir: "/var/app/play-test"
-    command: "./sbt run"
+    command: "./sbt compile"
 
