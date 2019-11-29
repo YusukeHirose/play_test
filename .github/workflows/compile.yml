@@ -33,7 +33,7 @@ jobs:
       #        run: docker-compose -f docker-compose-local.yml up
 
       - name: Build Image
-        run: docker build -t test .
+        run: docker build -t test -f Dockerfile-local .
 
       - name: Run Container
         run: docker run -p 9000:9000 test:latest ./sbt run
