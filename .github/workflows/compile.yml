@@ -26,8 +26,14 @@ jobs:
       #      - name: Compile
       #        run: sbt compile
 
-      - name: Build
-        run: docker-compose -f docker-compose-local.yml up
+      #      - name: Build
+      #        run: docker-compose -f docker-compose-local.yml up
+      #
+      #      - name: Build2
+      #        run: docker-compose -f docker-compose-local.yml up
 
-      - name: Build2
-        run: docker-compose -f docker-compose-local.yml up
+      - name: Build Image
+        run: docker build -t test .
+
+      - name: Run Container
+        run: docker run -p 9000:9000 test:latest bash -c "./sbt && ./sbt run"
