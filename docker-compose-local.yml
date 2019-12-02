@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  play-test:
+    container_name: play-test
+    image: amazoncorretto:11.0.4
+    #    build: .
+    expose:
+      - 9000
+    ports:
+      - 9000:9000
+    #    stdin_open: true
+    tty: true
+    volumes:
+      - ./:/var/app/play-test
+    working_dir: /var/app/play-test
+    command: ./sbt compile
+
